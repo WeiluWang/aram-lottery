@@ -14,13 +14,37 @@
   </head>
   <body>
     <style>
+        @keyframes backgroundColorPalette {
+            0% {
+                color: #ee6055;
+            }
+            25% {
+                color: #60d394;
+            }
+            50% {
+                color: #859bff;
+            }
+            75% {
+                color: #d116b2;
+            }
+            100% {
+                color: #ff9b85;
+            }
+        }
+        .container{
+            background-color: bisque;
+        }
         .my-custom-row {
             background-color: bisque;
-            height: 1000px;
+            height: 1300px;
         }
         #topic {
             text-align: center;
             font-size: 70px;
+            animation-name: backgroundColorPalette;
+            animation-duration: 10s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
         }
         .rule-input{
             margin-bottom: 20px;
@@ -41,101 +65,155 @@
             
             margin-bottom: 20px;
         }
+        .default-rules{
+            background-color: bisque;
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            text-align: center;
+        }
+        #default-rules{
+            font-size: 30px;
+            font-weight:bolder;
+        }
+        #default-rules-text{
+            font-size: 30px;
+            
+        }
+        #default-rules-input{
+            width: 50%;
+        }
+        .player-title{
+            font-size: 25px;
+            font-weight: bolder;
+        }
+        .player-rule{
+            font-size: 20px;
+        }
+        #default-rules-input-div{
+            margin-top: 20px;
+           
+        }
+        #default-rules-text-div{
+            width: 80%;
+           
+            
+        }
+        .default-rules-title{
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            text-align: center;
+            margin-top: 10px;
+        }
     </style>
 
     <div class="container">
-      <div class="row">
+        
         <div id="topic">Aram 特殊模式抽籤</div>
-      </div>
+        
+        
 
-
-      <div class="row my-custom-row justify-content-center align-items-center">
-        <div class="rules col-sm-6" id="rules">
-            <div>
-                <textarea class="rule-input w3-input w3-border" type="text" placeholder="規則1" id="rule1"></textarea>
+        <div class="row my-custom-row justify-content-center align-items-center">
+            <div class="default-rules-title">
+                <div id="default-rules">通用規則</div> 
             </div>
-            <div>
-                <textarea class="rule-input w3-input w3-border" placeholder="規則2" id="rule2"></textarea>
+            <div class="default-rules" id="default-rules-input-div">
+                <input class="w3-input w3-border" id="default-rules-input"></input>
             </div>
-            <div>
-                <textarea class="rule-input w3-input w3-border" placeholder="規則3" id="rule3"></textarea>
+            <div class="default-rules" id="default-rules-text-div">
+                <div class="" id="default-rules-text"></div>
             </div>
-            <div>
-                <textarea class="rule-input w3-input w3-border" placeholder="規則4" id="rule4"></textarea>
+            <div class="default-rules-title">
+                <div id="default-rules">個人規則</div> 
             </div>
-            <div>
-                <textarea class="rule-input w3-input w3-border" placeholder="規則5" id="rule5"></textarea>
+            
+            <div class="rules col-sm-6" id="rules">
+                <div>
+                    <textarea class="rule-input w3-input w3-border" type="text" placeholder="規則1" id="rule1"></textarea>
+                </div>
+                <div>
+                    <textarea class="rule-input w3-input w3-border" placeholder="規則2" id="rule2"></textarea>
+                </div>
+                <div>
+                    <textarea class="rule-input w3-input w3-border" placeholder="規則3" id="rule3"></textarea>
+                </div>
+                <div>
+                    <textarea class="rule-input w3-input w3-border" placeholder="規則4" id="rule4"></textarea>
+                </div>
+                <div>
+                    <textarea class="rule-input w3-input w3-border" placeholder="規則5" id="rule5"></textarea>
+                </div>
+                <div>
+                    <textarea class="rule-input w3-input w3-border" placeholder="規則6" id="rule6"></textarea>
+                </div>
+                <div>
+                    <textarea class="rule-input w3-input w3-border" placeholder="規則7" id="rule7"></textarea>
+                </div>
+                <div>
+                    <textarea class="rule-input w3-input w3-border" placeholder="規則8" id="rule8"></textarea>
+                </div>
+                <div>
+                    <textarea class="rule-input w3-input w3-border" placeholder="規則9" id="rule9"></textarea>
+                </div>
+                <div>
+                    <textarea class="rule-input w3-input w3-border" placeholder="規則10" id="rule10"></textarea>
+                </div>
+            
             </div>
-            <div>
-                <textarea class="rule-input w3-input w3-border" placeholder="規則6" id="rule6"></textarea>
-            </div>
-            <div>
-                <textarea class="rule-input w3-input w3-border" placeholder="規則7" id="rule7"></textarea>
-            </div>
-            <div>
-                <textarea class="rule-input w3-input w3-border" placeholder="規則8" id="rule8"></textarea>
-            </div>
-            <div>
-                <textarea class="rule-input w3-input w3-border" placeholder="規則9" id="rule9"></textarea>
-            </div>
-            <div>
-                <textarea class="rule-input w3-input w3-border" placeholder="規則10" id="rule10"></textarea>
-            </div>
-         
-        </div>
-        <div class="results col-sm-6" id="playerResults">
-            <div class="row">
-                <div class="results col-sm-6">
-                    <div class="player">
-                        <div>玩家1</div>
-                        <div class="p-3 border bg-light" id="player1Result1"></div>
+            <div class="results col-sm-6" id="playerResults">
+                <div class="row justify-content-center align-items-center">
+                    <div class="results col-sm-6">
+                        <div class="player">
+                            <div class="player-title">玩家1</div>
+                            <div class="player-rule p-3 border bg-light" id="player1Result1"></div>
+                        </div>
+                        <div class="player">
+                            <div class="player-title">玩家3</div>
+                            <div class="player-rule p-3 border bg-light" id="player1Result3"></div>
+                        </div>
+                        <div class="player">
+                            <div class="player-title">玩家5</div>
+                            <div class="player-rule p-3 border bg-light" id="player1Result5"></div>
+                        </div>
+                        <div class="player">
+                            <div class="player-title">玩家7</div>
+                            <div class="player-rule p-3 border bg-light" id="player1Result7"></div>
+                        </div>
+                        <div class="player">
+                            <div class="player-title">玩家9</div>
+                            <div class="player-rule p-3 border bg-light" id="player1Result9"></div>
+                        </div>
                     </div>
-                    <div class="player">
-                        <div>玩家3</div>
-                        <div class="p-3 border bg-light" id="player1Result3"></div>
-                    </div>
-                    <div class="player">
-                        <div>玩家5</div>
-                        <div class="p-3 border bg-light" id="player1Result5"></div>
-                    </div>
-                    <div class="player">
-                        <div>玩家7</div>
-                        <div class="p-3 border bg-light" id="player1Result7"></div>
-                    </div>
-                    <div class="player">
-                        <div>玩家9</div>
-                        <div class="p-3 border bg-light" id="player1Result9"></div>
+                    <div class="results col-sm-6">
+                        <div  class="player">
+                            <div class="player-title">玩家2</div>
+                            <div class="player-rule p-3 border bg-light" id="player1Result2"></div>
+                        </div>
+                        <div  class="player">
+                            <div class="player-title">玩家4</div>
+                            <div class="player-rule p-3 border bg-light" id="player1Result4"></div>
+                        </div>
+                        <div  class="player">
+                            <div class="player-title">玩家6</div>
+                            <div class="player-rule p-3 border bg-light" id="player1Result6"></div>
+                        </div>
+                        <div  class="player">
+                            <div class="player-title">玩家8</div>
+                            <div class="player-rule p-3 border bg-light" id="player1Result8"></div>
+                        </div>
+                        <div  class="player">
+                            <div class="player-title">玩家10</div>
+                            <div class="player-rule p-3 border bg-light" id="player1Result10"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="results col-sm-6">
-                    <div  class="player">
-                        <div>玩家2</div>
-                        <div class="p-3 border bg-light" id="player1Result2"></div>
-                    </div>
-                    <div  class="player">
-                        <div>玩家4</div>
-                        <div class="p-3 border bg-light" id="player1Result4"></div>
-                    </div>
-                    <div  class="player">
-                        <div>玩家6</div>
-                        <div class="p-3 border bg-light" id="player1Result6"></div>
-                    </div>
-                    <div  class="player">
-                        <div>玩家8</div>
-                        <div class="p-3 border bg-light" id="player1Result8"></div>
-                    </div>
-                    <div  class="player">
-                        <div>玩家10</div>
-                        <div class="p-3 border bg-light" id="player1Result10"></div>
-                    </div>
-                </div>
             </div>
+            <div id="buttons">
+                <button class="w3-btn w3-teal" id="result">抽籤</button>
+                <button class="w3-btn w3-deep-purple" id="editResult">修改規則</button>
+            </div> 
         </div>
-        <div id="buttons">
-            <button class="w3-btn w3-teal" id="result">抽籤</button>
-            <button class="w3-btn w3-deep-purple" id="editResult">修改規則</button>
-        </div> 
-      </div>
       
     </div>
 
@@ -150,6 +228,8 @@
       crossorigin="anonymous"
     ></script>
     <script>
+        
+        document.getElementById('default-rules-text-div').style.display = "none";
         document.getElementById('playerResults').style.display = "none";
         document.getElementById('editResult').style.display = "none";
 
@@ -160,10 +240,15 @@
         const editResult = document.getElementById("editResult");
         editResult.addEventListener("click", editResultFunc);
         function myFunction() {
+            document.getElementById('default-rules-input-div').style.display = "none";
+            document.getElementById('default-rules-text-div').style.display = "flex";
             document.getElementById('rules').style.display = "none";
             document.getElementById('result').style.display = "none";
             document.getElementById('editResult').style.display = "flex";
             document.getElementById('playerResults').style.display = "block";
+            //default rule
+            document.getElementById("default-rules-text").innerHTML = document.getElementById("default-rules-input").value;
+
            //random array
             var nums = [1,2,3,4,5,6,7,8,9,10]
                 ranNums = [],
@@ -195,8 +280,14 @@
                 document.getElementById("player1Result"+(i+1)).innerHTML = rules[ranNums[i]-1];
             }
             //document.getElementById("player1Result1").innerHTML = rules[ranNums[0]-1];
+
+            //var defaultRulesInput = document.getElementsByTagName('default-rules-input-div');
+            
+
         }
         function editResultFunc() {
+            document.getElementById('default-rules-input-div').style.display = "flex";
+            document.getElementById('default-rules-text-div').style.display = "none";
             document.getElementById('rules').style.display = "block";
             document.getElementById('playerResults').style.display = "none";
             document.getElementById('result').style.display = "flex";
