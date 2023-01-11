@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap v5 - Alpha1</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </head>
+  <body>
+    <style>
+        .my-custom-row {
+            background-color: bisque;
+            height: 1000px;
+        }
+        #topic {
+            text-align: center;
+            font-size: 70px;
+        }
+        .rule-input{
+            margin-bottom: 20px;
+        
+        }
+        ::placeholder {
+            color: rgb(228, 228, 228);
+        
+        }
+        #buttons{
+            display: flex;
+            justify-content:center;
+            align-items: center;
+            text-align: center;
+            font-size: 30px;
+        }
+        .player{
+            
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <div class="container">
+      <div class="row">
+        <div id="topic">Aram 特殊模式抽籤</div>
+      </div>
+
+
+      <div class="row my-custom-row justify-content-center align-items-center">
+        <div class="rules col-sm-6" id="rules">
+            <div>
+                <textarea class="rule-input w3-input w3-border" type="text" placeholder="規則1" id="rule1"></textarea>
+            </div>
+            <div>
+                <textarea class="rule-input w3-input w3-border" placeholder="規則2" id="rule2"></textarea>
+            </div>
+            <div>
+                <textarea class="rule-input w3-input w3-border" placeholder="規則3" id="rule3"></textarea>
+            </div>
+            <div>
+                <textarea class="rule-input w3-input w3-border" placeholder="規則4" id="rule4"></textarea>
+            </div>
+            <div>
+                <textarea class="rule-input w3-input w3-border" placeholder="規則5" id="rule5"></textarea>
+            </div>
+            <div>
+                <textarea class="rule-input w3-input w3-border" placeholder="規則6" id="rule6"></textarea>
+            </div>
+            <div>
+                <textarea class="rule-input w3-input w3-border" placeholder="規則7" id="rule7"></textarea>
+            </div>
+            <div>
+                <textarea class="rule-input w3-input w3-border" placeholder="規則8" id="rule8"></textarea>
+            </div>
+            <div>
+                <textarea class="rule-input w3-input w3-border" placeholder="規則9" id="rule9"></textarea>
+            </div>
+            <div>
+                <textarea class="rule-input w3-input w3-border" placeholder="規則10" id="rule10"></textarea>
+            </div>
+         
+        </div>
+        <div class="results col-sm-6" id="playerResults">
+            <div class="row">
+                <div class="results col-sm-6">
+                    <div class="player">
+                        <div>玩家1</div>
+                        <div class="p-3 border bg-light" id="player1Result1"></div>
+                    </div>
+                    <div class="player">
+                        <div>玩家3</div>
+                        <div class="p-3 border bg-light" id="player1Result3"></div>
+                    </div>
+                    <div class="player">
+                        <div>玩家5</div>
+                        <div class="p-3 border bg-light" id="player1Result5"></div>
+                    </div>
+                    <div class="player">
+                        <div>玩家7</div>
+                        <div class="p-3 border bg-light" id="player1Result7"></div>
+                    </div>
+                    <div class="player">
+                        <div>玩家9</div>
+                        <div class="p-3 border bg-light" id="player1Result9"></div>
+                    </div>
+                </div>
+                <div class="results col-sm-6">
+                    <div  class="player">
+                        <div>玩家2</div>
+                        <div class="p-3 border bg-light" id="player1Result2"></div>
+                    </div>
+                    <div  class="player">
+                        <div>玩家4</div>
+                        <div class="p-3 border bg-light" id="player1Result4"></div>
+                    </div>
+                    <div  class="player">
+                        <div>玩家6</div>
+                        <div class="p-3 border bg-light" id="player1Result6"></div>
+                    </div>
+                    <div  class="player">
+                        <div>玩家8</div>
+                        <div class="p-3 border bg-light" id="player1Result8"></div>
+                    </div>
+                    <div  class="player">
+                        <div>玩家10</div>
+                        <div class="p-3 border bg-light" id="player1Result10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="buttons">
+            <button class="w3-btn w3-teal" id="result">抽籤</button>
+            <button class="w3-btn w3-deep-purple" id="editResult">修改規則</button>
+        </div> 
+      </div>
+      
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+        document.getElementById('playerResults').style.display = "none";
+        document.getElementById('editResult').style.display = "none";
+
+        const result = document.getElementById("result");
+        result.addEventListener("click", myFunction);
+
+
+        const editResult = document.getElementById("editResult");
+        editResult.addEventListener("click", editResultFunc);
+        function myFunction() {
+            document.getElementById('rules').style.display = "none";
+            document.getElementById('result').style.display = "none";
+            document.getElementById('editResult').style.display = "flex";
+            document.getElementById('playerResults').style.display = "block";
+           //random array
+            var nums = [1,2,3,4,5,6,7,8,9,10]
+                ranNums = [],
+                i = nums.length,
+                j = 0;
+
+            while (i--) {
+                j = Math.floor(Math.random() * (i+1));
+                ranNums.push(nums[j]);
+                nums.splice(j,1);
+            }
+            //get input value
+            var rules = []
+            rules.push(document.getElementById('rule1').value)
+            rules.push(document.getElementById('rule2').value)
+            rules.push(document.getElementById('rule3').value)
+            rules.push(document.getElementById('rule4').value)
+            rules.push(document.getElementById('rule5').value)
+            rules.push(document.getElementById('rule6').value)
+            rules.push(document.getElementById('rule7').value)
+            rules.push(document.getElementById('rule8').value)
+            rules.push(document.getElementById('rule9').value)
+            rules.push(document.getElementById('rule10').value)
+            
+            //console.log(rules)
+            console.log(ranNums)
+            //console.log(rules[ranNums[0]-1])
+            for(let i=0 ; i<10;i++){
+                document.getElementById("player1Result"+(i+1)).innerHTML = rules[ranNums[i]-1];
+            }
+            //document.getElementById("player1Result1").innerHTML = rules[ranNums[0]-1];
+        }
+        function editResultFunc() {
+            document.getElementById('rules').style.display = "block";
+            document.getElementById('playerResults').style.display = "none";
+            document.getElementById('result').style.display = "flex";
+            document.getElementById('editResult').style.display = "none";
+        }
+    </script>
+  </body>
+</html>
